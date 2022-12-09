@@ -9,7 +9,7 @@ app.use(fileUpload());
 app.use(express.static(path.join(__dirname, "/public")));
 
 app.get("/", function (req, res) {
-  res.send("sdfsdf");
+  res.send("Hey!");
 });
 
 app.get("/upload", function (req, res) {
@@ -27,7 +27,6 @@ app.post("/upload", async function (req, res) {
 
     let filename = uploadedFile.name;
     const uploadPath = __dirname + "/public/" + filename;
-    const iconPath = __dirname + "/public/" + filename;
 
     uploadedFile.mv(uploadPath, function (err) {
       if (err) {
